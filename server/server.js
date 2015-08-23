@@ -1,31 +1,37 @@
-// server.js
+/**
+ * Module dependencies.
+ */
 
-var express = require('express'),
-path = require('path'),
-app = express(),
-port = 4444,
-bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var routes = require('./routes');
+var apiRoutes = require('./api-routes');
+var path = require('path');
+var mongoose = require('mongoose');
+var reactViews = require('express-react-views');
+require('node-jsx').install();
 
-// Make sure to include the JSX transpiler
-require("node-jsx").install();
+mongoose.connect('mongodb://localhost:27017');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(){
+	console.log('mongodb opened!!!!');
+})
 
-// Include static assets. Not advised for production
+// This should refer to the local React and gets installed via `npm install` in
+// the example.
+
+// all environments
+app.set('views', __dirname + '/../app/react/components/');
+app.set('view engine', 'js');
+app.engine('js', reactViews.createEngine());
+
 app.use(express.static('build'));
-// Set view path
-app.set('views', path.join(__dirname, 'ui/views'));
-// set up ejs for templating. You can use whatever
-app.set('view engine', 'ejs');
 
-// Set up Routes for the application
-app.use(require('./routers/core-router.js'));
 
-//Route not found -- Set 404
-app.get('*', function(req, res) {
-    res.json({
-        "route": "Sorry this page does not exist!"
-    });
-});
+app.use('/api/bingo', apiRoutes);
+app.use('/', routes);
 
-app.listen(port, function(){
-	console.log('Server is Up and Running at Port : ' + port);
-});
+app.listen(process.env.PORT || 3000, function(){
+	console.log('listening');
+})

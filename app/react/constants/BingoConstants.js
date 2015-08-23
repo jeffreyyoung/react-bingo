@@ -1,0 +1,21 @@
+var keyMirror = require('react/lib/keyMirror');
+
+module.exports = keyMirror({
+	SQUARE_SET_ACTIVE: null,
+	SQUARE_SET_LABEL: null,
+	BINGO_SET_TITLE: null,
+
+	SAVE_BINGO: null,
+	SAVE_BINGO_SUCCESS: null,
+	SAVE_BINGO_FAIL: null,
+
+	LOAD_SEARCH_RESULTS: null,
+	LOAD_SEARCH_RESULTS_SUCCESS: null,
+	LOAD_SEARCH_RESULTS_FAIL: null,
+
+	LOAD_MORE_SEARCH_RESULTS: null,
+	LOAD_MORE_SEARCH_RESULTS_SUCCESS: null,
+	LOAD_MORE_SEARCH_RESULTS_FAIL: null,
+
+	SEARCH_SET_QUERY: null
+});

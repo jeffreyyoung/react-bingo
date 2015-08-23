@@ -5,15 +5,34 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -t reactify ui/main.js -o build/bundle.js"
+    "build": "gulp",
+    "start": "gulp && node server/server.js"
   },
   "author": "Jeffrey Young",
   "license": "ISC",
   "dependencies": {
+    "ajax-promise": "^0.8.1",
+    "axios": "^0.5.4",
     "body-parser": "^1.13.3",
+    "clone": "^1.0.2",
+    "event-stream": "^3.3.1",
+    "events": "^1.0.2",
     "express": "^4.13.3",
+    "express-react-views": "^0.8.2",
+    "flux": "^2.0.3",
+    "glob": "^5.0.14",
+    "gulp-less": "^3.0.3",
+    "gulp-less-import": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.2",
     "path": "^0.11.14",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.24.4",
+    "redux": "^1.0.1",
+    "request-promise": "^0.4.3",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
@@ -21,6 +40,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-notify": "^2.2.0",
     "reactify": "^1.1.1",
+    "redux-devtools": "^1.0.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.3.1"
   }
