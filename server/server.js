@@ -11,7 +11,8 @@ var mongoose = require('mongoose');
 var reactViews = require('express-react-views');
 require('node-jsx').install();
 
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://admin:password@ds035533.mongolab.com:35533/react-bingo')
+//mongoose.connect('mongodb://localhost:27017');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
