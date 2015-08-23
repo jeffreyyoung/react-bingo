@@ -1,0 +1,31 @@
+@import "readable.less";
+@import "readable-variables.less";
+@import "base.less";
+.bingo-board {
+	overflow: auto;
+
+	.square {
+		transition: all 0.2s ease;
+		background-color: #d3d3d3;
+		color: black;
+		width: calc(~"20% - 10px");
+		min-height: 100px;
+		border-radius: 5px;
+		float: left;
+		height: calc(~"15% - 10px");
+		padding: 5px;
+		margin: 5px;
+		cursor: pointer;
+		text-align: center;
+	}
+	.square:not(.active):hover {
+		transform: scale(1.05);
+	}
+	.square:nth-child(5n + 1){
+		clear: left;
+	}
+	.active, .square.active:hover{
+		background-color:  @brand-primary;
+		color: white;
+	}
+}
