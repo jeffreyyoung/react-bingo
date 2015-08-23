@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp",
-    "start": "gulp && node server/server.js"
+    "start": "node server/server.js"
   },
   "author": "Jeffrey Young",
   "license": "ISC",
