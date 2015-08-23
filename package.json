@@ -32,9 +32,7 @@
     "react-bootstrap": "^0.24.4",
     "redux": "^1.0.1",
     "request-promise": "^0.4.3",
-    "underscore": "^1.8.3"
-  },
-  "devDependencies": {
+    "underscore": "^1.8.3",
     "browserify": "^11.0.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
